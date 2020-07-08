@@ -136,7 +136,8 @@
           :store="store"
           :style="{
             width: bodyWidth
-          }"></table-footer>
+          }">
+          </table-footer>
       </div>
     </div>
     <div
@@ -197,7 +198,8 @@
           :store="store"
           :style="{
             width: bodyWidth
-          }"></table-footer>
+          }">
+          </table-footer>
       </div>
     </div>
     <div

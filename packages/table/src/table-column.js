@@ -20,6 +20,7 @@ export default {
     width: {},
     minWidth: {},
     renderHeader: Function,
+    renderFooter: Function,
     sortable: {
       type: [Boolean, String],
       default: false
@@ -151,6 +152,15 @@ export default {
         column.renderHeader = (h, scope) => {
           const renderHeader = this.$scopedSlots.header;
           return renderHeader ? renderHeader(scope) : column.label;
+        };
+      }
+
+      if (this.renderFooter) {
+        console.warn('[Element Warn][TableColumn]Comparing to render-footer, scoped-slot footer is easier to use. We recommend users to use scoped-slot footer.');
+      } else if (column.type !== 'selection') {
+        column.renderFooter = (h, scope) => {
+          const renderFooter = this.$scopedSlots.footer;
+          return renderFooter ? renderFooter(scope) : column.label;
         };
       }
 

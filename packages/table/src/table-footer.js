@@ -65,8 +65,12 @@ export default {
                 rowspan={ column.rowSpan }
                 class={ this.getRowClasses(column, cellIndex) }>
                 <div class={ ['cell', column.labelClassName] }>
-                  {
+                  {/* {
                     sums[cellIndex]
+                  } */
+                    column.renderFooter
+                      ? column.renderFooter.call(this._renderProxy, h, { column, $index: cellIndex, store: this.store, _self: this.$parent.$vnode.context })
+                      : sums[cellIndex]
                   }
                 </div>
               </td>)

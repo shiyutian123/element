@@ -1,6 +1,6 @@
 {
-  "name": "x-element-ui",
-  "version": "2.13.2",
+  "name": "xx-element-ui",
+  "version": "2.13.4",
   "description": "A Component Library for Vue.js.",
   "main": "lib/element-ui.common.js",
   "files": [
@@ -63,11 +63,10 @@
     "async-validator": "~1.8.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.0",
     "deepmerge": "^1.2.0",
-    "element-ui": "^2.13.2",
     "normalize-wheel": "^1.0.1",
     "resize-observer-polyfill": "^1.5.0",
     "throttle-debounce": "^1.0.1",
-    "x-lib-mock": "^0.0.1"
+    "x-lib-rule-engine": "^0.1.0"
   },
   "peerDependencies": {
     "vue": "^2.5.17"

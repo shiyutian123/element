@@ -56,7 +56,8 @@
       },
 
       currentLabel() {
-        return this.label || (this.isObject ? '' : this.value);
+        // return this.label || (this.isObject ? '' : this.value);
+        return typeof this.label === 'undefined' ? (this.isObject ? '' : this.value) : this.label;
       },
 
       currentValue() {

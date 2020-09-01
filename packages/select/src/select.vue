@@ -71,7 +71,7 @@
       ref="reference"
       v-model="selectedLabel"
       type="text"
-      :placeholder="value ? '' : currentPlaceholder"
+      :placeholder="currentPlaceholder"
       :name="name"
       :id="id"
       :autocomplete="autoComplete || autocomplete"
@@ -525,8 +525,12 @@
           }
         }
         if (option) return option;
+
+        // 如果没有value，默认显示’‘, 而不是直接显示label
+        // const label = (!isObject && !isNull && !isUndefined)
+        //   ? value : '';
         const label = (!isObject && !isNull && !isUndefined)
-          ? value : '';
+          ? '' : '';
         let newOption = {
           value: value,
           currentLabel: label

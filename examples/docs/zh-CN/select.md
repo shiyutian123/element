@@ -39,7 +39,7 @@ v-model="value" placeholder="请选择">
           value: '选项5',
           label: '北京烤鸭'
         }],
-        value: ''
+        value: 'AAA'
       }
     }
   }
@@ -233,7 +233,7 @@ v-model="value" placeholder="请选择">
           value: '选项5',
           label: '北京烤鸭'
         }],
-        value1: [],
+        value1: ['选项1','选项10'],
         value2: []
       }
     }

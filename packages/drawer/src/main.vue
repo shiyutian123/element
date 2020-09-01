@@ -49,7 +49,7 @@
 <script>
 import Popup from 'element-ui/src/utils/popup';
 import emitter from 'element-ui/src/mixins/emitter';
-import Utils from 'element-ui/src/utils/aria-utils';
+// import Utils from 'element-ui/src/utils/aria-utils';
 
 export default {
   name: 'ElDrawer',
@@ -133,16 +133,16 @@ export default {
           document.body.appendChild(this.$el);
         }
         this.prevActiveElement = document.activeElement;
-        // this.$nextTick(() => {
-        //   Utils.focusFirstDescendant(this.$refs.drawer);
-        // });
+        this.$nextTick(() => {
+          Utils.focusFirstDescendant(this.$refs.drawer);
+        });
       } else {
         if (!this.closed) this.$emit('close');
-        // this.$nextTick(() => {
-        //   if (this.prevActiveElement) {
-        //     this.prevActiveElement.focus();
-        //   }
-        // });
+        this.$nextTick(() => {
+          if (this.prevActiveElement) {
+            this.prevActiveElement.focus();
+          }
+        });
       }
     }
   },

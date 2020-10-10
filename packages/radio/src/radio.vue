@@ -11,7 +11,7 @@
     role="radio"
     :aria-checked="model === label"
     :aria-disabled="isDisabled"
-    :tabindex="tabIndex"
+    :tabindex="computedTabIndex"
     @keydown.space.stop.prevent="model = isDisabled ? model : label"
   >
     <span class="el-radio__input"
@@ -68,7 +68,8 @@
       disabled: Boolean,
       name: String,
       border: Boolean,
-      size: String
+      size: String,
+      tabIndex: String
     },
 
     data() {
@@ -116,8 +117,8 @@
           ? this._radioGroup.disabled || this.disabled || (this.elForm || {}).disabled
           : this.disabled || (this.elForm || {}).disabled;
       },
-      tabIndex() {
-        return (this.isDisabled || (this.isGroup && this.model !== this.label)) ? -1 : 0;
+      computedTabIndex() {
+        return this.tabIndex || ((this.isDisabled || (this.isGroup && this.model !== this.label)) ? '-1' : '0');
       }
     },
 

@@ -391,30 +391,30 @@
       },
 
       handleFixedMousewheel(event, data) {
-        const bodyWrapper = this.bodyWrapper;
-        if (Math.abs(data.spinY) > 0) {
-          const currentScrollTop = bodyWrapper.scrollTop;
-          if (data.pixelY < 0 && currentScrollTop !== 0) {
-            event.preventDefault();
-          }
-          if (data.pixelY > 0 && bodyWrapper.scrollHeight - bodyWrapper.clientHeight > currentScrollTop) {
-            event.preventDefault();
-          }
-          bodyWrapper.scrollTop += Math.ceil(data.pixelY / 5);
-        } else {
-          bodyWrapper.scrollLeft += Math.ceil(data.pixelX / 5);
-        }
+        // const bodyWrapper = this.bodyWrapper;
+        // if (Math.abs(data.spinY) > 0) {
+        //   const currentScrollTop = bodyWrapper.scrollTop;
+        //   if (data.pixelY < 0 && currentScrollTop !== 0) {
+        //     event.preventDefault();
+        //   }
+        //   if (data.pixelY > 0 && bodyWrapper.scrollHeight - bodyWrapper.clientHeight > currentScrollTop) {
+        //     event.preventDefault();
+        //   }
+        //   bodyWrapper.scrollTop += Math.ceil(data.pixelY / 5);
+        // } else {
+        //   bodyWrapper.scrollLeft += Math.ceil(data.pixelX / 5);
+        // }
       },
 
       handleHeaderFooterMousewheel(event, data) {
-        const { pixelX, pixelY } = data;
-        if (Math.abs(pixelX) >= Math.abs(pixelY)) {
-          this.bodyWrapper.scrollLeft += data.pixelX / 5;
-        }
+        // const { pixelX, pixelY } = data;
+        // if (Math.abs(pixelX) >= Math.abs(pixelY)) {
+        //   this.bodyWrapper.scrollLeft += data.pixelX / 5;
+        // }
       },
 
       // TODO 使用 CSS transform
-      syncPostion: throttle(20, function() {
+      syncPostion: throttle(100, function() {
         const { scrollLeft, scrollTop, offsetWidth, scrollWidth } = this.bodyWrapper;
         const { headerWrapper, footerWrapper, fixedBodyWrapper, rightFixedBodyWrapper } = this.$refs;
         if (headerWrapper) headerWrapper.scrollLeft = scrollLeft;
